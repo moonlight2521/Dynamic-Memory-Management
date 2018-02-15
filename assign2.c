@@ -1,9 +1,4 @@
-////////////////////////////////////////////////////////////////////////////////
-//
-//  File           : cmsc257-s17-assign2.c
-//  Description    : This is the main source code for for the second assignment
-//                   of CMSC257.
-//
+
 
 // Include Files
 #include <stdio.h>
@@ -15,14 +10,6 @@
 //
 // Functions
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Function     : main
-// Description  : The main function for the CMSC257 assignment #2
-//
-// Inputs       : argc - the number of command line parameters
-//                argv - the parameters
-// Outputs      : 0 if successful test, -1 if failure
 
 int main(){
 
