@@ -4,7 +4,6 @@
 #include <string.h>
 #include <sys/types.h>
 #include <unistd.h>
-// Don't include stdlb since the names will conflict?
 //#include <assign2-support.h>
 // alignment:
 #define align8(x) (((((x) -1) >>2) <<2)+8);
@@ -34,13 +33,12 @@ struct block_meta {
   int free;
   void *ptr;    // a pointer to the allocated block 
   char data[1];
-  int magic;    // For debugging only. TODO: remove this in non-debug mode.
+  int magic;   
 };
 
 
 
 // Iterate through blocks until we find one that's large enough.
-// TODO: split block up if it's larger than necessary
 void split_block(struct block_meta *b,size_t s){
   struct block_meta *new;
   new = (t_block)(b->data + s);
@@ -137,7 +135,6 @@ void *calloc(size_t nelem, size_t elsize) {
   return ptr;
 }
 
-// TODO: maybe do some validation here.
 struct block_meta *get_block_ptr(void *ptr) {
   return (struct block_meta*)ptr - 1;
 }
@@ -156,7 +153,6 @@ void free(void *ptr) {
     return;
   }
 
-  // TODO: consider merging blocks once splitting blocks is implemented.
    struct block_meta* block_ptr = get_block_ptr(ptr);
    assert(block_ptr->free == 0);
    assert(block_ptr->magic == 0x77777777 || block_ptr->magic == 0x12345678);
@@ -165,17 +161,6 @@ void free(void *ptr) {
    merge_two();   
 }
 
-
-//struct block_meta *merge(struct block_meta *b){
-//  if (b->next && b->next->free){
-//    b->size += META_SIZE + b->next->size;
-//    b->next  = b->next->next;
-//        if(b->next){
-//          b->next->prev = b;
-//   }
-// }
-//  return(b);
-//}
 
 
 // check if the block can be merge.
