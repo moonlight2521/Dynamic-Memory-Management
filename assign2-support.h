@@ -1,14 +1,6 @@
 #ifndef CMSC257_A2SUPPORT_INCLUDED
 #define CMSC257_A2SUPPORT_INCLUDED
 
-
-////////////////////////////////////////////////////////////////////////////////
-//
-//  File          : assign1-support.h
-//  Description   : This is a set of general-purpose utility functions we use
-// Functional Prototypes
-
-
 void *nofree_malloc(size_t size);
 
 void *malloc(size_t size);
