@@ -1,13 +1,3 @@
-////////////////////////////////////////////////////////////////////////////////
-//
-//  File           : cmsc257-s17-assign1.c
-//  Description    : This is the main source code for for the first assignment
-//                   of CMSC257.  See the related
-//                   assignment page for details.
-//
-//   Author        : ????
-//   Last Modified : ????
-//
 
 // Include Files
 #include <assert.h>
